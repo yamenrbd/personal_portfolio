@@ -1,4 +1,17 @@
-hello
+
+{% load static %}
+
+
+<a href= "{% url 'blog:all_blogs' %}" >Blogs</a>
+<br>
+
+<a href={% static 'portfolio/dummy.pdf' %} >rusme</a>
+<br>
+
+
+<img src = {% static 'portfolio/earth.jpg' %} height="400" width="400" >
+
+<br>
 
 {% for project in projects %}
 
