@@ -1,11 +1,17 @@
-<h2>there are {{ blogs.count }} blogs</h2>
+{% extends  'portfolio/base.html' %}
 
-{% for blog in blogs %}
+{% block content %}
 
-<a href = "{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2></a><br><br>
+    <h2>there are {{ blogs.count }} blogs</h2>
+
+    {% for blog in blogs %}
+
+        <a href = "{% url 'blog:detail' blog.id %}"><h2>{{blog.title}}</h2></a><br><br>
 
 
-{{ blog.date|date:'M d Y'| upper }}
-<p>{{ blog.description|striptags|truncatechars:100 }}</p> <br>
+        {{ blog.date|date:'M d Y'| upper }}
+        <p>{{ blog.description|striptags|truncatechars:100 }}</p> <br>
 
-{% endfor %}
+    {% endfor %}
+
+{% endblock %}
